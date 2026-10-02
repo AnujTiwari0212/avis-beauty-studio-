@@ -3,15 +3,13 @@ const { test, expect } = require('@playwright/test');
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:8765';
 
 async function completeBookingFlow(page) {
-  await page.goto(`${BASE}/index.html`);
+  await page.goto(`${BASE}/index.html?review=1`);
   await page.waitForTimeout(800); // loader
 
   await page.getByRole('button', { name: 'Book Now' }).first().click();
   await expect(page.locator('#overlay')).toHaveClass(/open/);
 
-  // Step 1: service + stylist
-  await page.locator('.svc-opt[data-svc="Facials"]').click();
-  await page.locator('.staff-c[data-staff="Raman Batth"]').click();
+  await page.locator('.svc-opt[data-svc="Fruit Facial"]').click();
   await page.locator('#pg1 button.btn-primary').click();
 
   // Step 2: date + time
@@ -27,8 +25,8 @@ async function completeBookingFlow(page) {
   await page.locator('#pg3 button.btn-primary').click();
 
   await expect(page.locator('#pg4')).toHaveClass(/show/);
-  await expect(page.locator('#summaryBox')).toContainText('Facials');
-  await expect(page.locator('#summaryBox')).toContainText('Raman Batth');
+  await expect(page.locator('#summaryBox')).toContainText('Fruit Facial');
+  await expect(page.locator('#summaryBox')).not.toContainText('Stylist');
   await expect(page.locator('#summaryBox')).toContainText('Test');
 }
 
@@ -47,8 +45,7 @@ test.describe('Booking & messaging — real browser tests', () => {
     const url = popup.url();
 
     expect(url).toMatch(/wa\.me\/16477176747/);
-    expect(decodeURIComponent(url)).toContain('Facials');
-    expect(decodeURIComponent(url)).toContain('Raman Batth');
+    expect(decodeURIComponent(url)).toContain('Fruit Facial');
     expect(decodeURIComponent(url)).toContain('Test');
     expect(decodeURIComponent(url)).toContain('647');
 
@@ -59,7 +56,7 @@ test.describe('Booking & messaging — real browser tests', () => {
   });
 
   test('Contact form opens WhatsApp with message', async ({ page, context }) => {
-    await page.goto(`${BASE}/contact.html`);
+    await page.goto(`${BASE}/contact.html?review=1`);
     await page.waitForTimeout(800);
 
     await page.locator('#contactName').fill('Jane Doe');
@@ -81,21 +78,20 @@ test.describe('Booking & messaging — real browser tests', () => {
   });
 
   test('Floating WhatsApp button has correct link', async ({ page }) => {
-    await page.goto(`${BASE}/index.html`);
+    await page.goto(`${BASE}/index.html?review=1`);
     const wa = page.locator('a.wa-btn');
     await expect(wa).toBeVisible();
     await expect(wa).toHaveAttribute('href', 'https://wa.me/16477176747');
   });
 
   test('Booking works from services page', async ({ page, context }) => {
-    await page.goto(`${BASE}/service.html`);
+    await page.goto(`${BASE}/service.html?review=1`);
     await page.waitForTimeout(800);
 
     await page.getByRole('button', { name: 'Book Appointment' }).first().click();
     await expect(page.locator('#overlay')).toHaveClass(/open/);
 
     await page.locator('.svc-opt[data-svc="Bridal Makeup"]').click();
-    await page.locator('.staff-c[data-staff="Senior Stylist"]').click();
     await page.locator('#pg1 button.btn-primary').click();
     await page.locator('.d-cell').first().click();
     await page.locator('.t-slot').first().click();
