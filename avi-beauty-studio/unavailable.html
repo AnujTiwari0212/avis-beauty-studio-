@@ -3,23 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>Avi's Beauty Studio</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1F3A">
+<title>Website Inactive — Avi's Beauty Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
 <style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#070D16;color:#fff;font-family:Georgia,serif;text-align:center;padding:2rem;}
-  main{max-width:520px;}
-  p.kicker{letter-spacing:.22em;text-transform:uppercase;font-family:Arial,sans-serif;font-size:.72rem;color:#C6A15B;margin:0 0 1rem;}
-  h1{font-weight:400;font-size:2.4rem;margin:0 0 .6rem;}
-  p{font-family:Arial,sans-serif;line-height:1.6;color:#d7dbe3;}
-  a{color:#E2C98A;}
+  :root {
+    --black: #070D16;
+    --navy: #0B1F3A;
+    --navy-mid: #16325C;
+    --gold: #C6A15B;
+    --gold-light: #E2C98A;
+    --white: #FFFFFF;
+    --muted: #A0ABC0;
+    --border: rgba(198, 161, 91, 0.35);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 25%, #112340 0%, var(--black) 80%);
+    color: var(--white);
+    font-family: 'Manrope', -apple-system, sans-serif;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .card {
+    max-width: 560px;
+    width: 100%;
+    background: rgba(11, 31, 58, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3rem 2.2rem 2.5rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+    position: relative;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .logo-wrap {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 1.5rem;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #070D16;
+    padding: 10px;
+  }
+  .logo-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .kicker {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .notice-badge {
+    display: inline-block;
+    background: rgba(198, 161, 91, 0.15);
+    color: var(--gold-light);
+    border: 1px solid rgba(198, 161, 91, 0.3);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.4rem;
+  }
+  p.desc {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: #D4DDE8;
+    margin-bottom: 2rem;
+  }
+  .action-buttons {
+    display: flex;
+    gap: 0.9rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: #070D16;
+  }
+  .btn-gold:hover {
+    background: var(--gold-light);
+  }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+  .meta-grid {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: left;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .meta-grid strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .review-link {
+    margin-top: 1.8rem;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .review-link a {
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: underline;
+  }
+  .review-link a:hover {
+    color: var(--gold-light);
+  }
+  @media(max-width: 520px) {
+    .meta-grid { grid-template-columns: 1fr; text-align: center; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <p class="kicker">Avi's Beauty Studio</p>
-  <h1>Website is down for maintenance</h1>
-  <p>Our website is not available for bookings right now. Please call or text us and we will be glad to help.</p>
-  <p><a href="tel:+16477176747">647-717-6747</a><br>556 Notre Dame Street, Belle River</p>
+<main class="card">
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Avi's Beauty Studio logo">
+  </div>
+  <div class="kicker">Avi's Beauty Studio</div>
+  <span class="notice-badge">Online Booking Temporarily Inactive</span>
+  <h1>Website is <em>under maintenance</em></h1>
+  <p class="desc">
+    We are currently updating our website and service menu. To prevent double bookings while work is in progress, online bookings through the website are temporarily inactive. Please call or message us directly and our team will gladly assist you.
+  </p>
+
+  <div class="action-buttons">
+    <a href="tel:+16477176747" class="btn btn-gold">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+      Call (647) 717-6747
+    </a>
+    <a href="https://wa.me/16477176747" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+      Chat on WhatsApp
+    </a>
+  </div>
+
+  <div class="meta-grid">
+    <div>
+      <strong>Studio Location</strong>
+      556 Notre Dame Street<br>Belle River, ON N0R 1A0
+    </div>
+    <div>
+      <strong>Salon Hours</strong>
+      Mon 10–6 · Tue Closed<br>Wed–Sat 10–7 · Sun 10–5
+    </div>
+  </div>
+
+  <div class="review-link">
+    Need to review progress? <a href="index.html?review=1">Access Studio Preview Mode</a>
+  </div>
 </main>
 </body>
 </html>

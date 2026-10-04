@@ -6,32 +6,41 @@
 
    :root{
 
-    /* ── CHAMPAGNE ROSE LUXURY THEME ── */
-    --rich-black:#1a1215;
-    --charcoal:#2a1f24;
-    --charcoal-mid:#352830;
-    --warm-white:#faf6f2;
-    --cream:#f0e8e2;
-    --cream-mid:#e8ddd4;
-    --champagne:#f7f0e8;
-    --gold:#c9a86c;
-    --gold-light:#e8cfa8;
-    --rose:#d4a5a5;
-    --rose-deep:#b87a8a;
-    --plum:#4a2c3d;
-    --plum-deep:#2d1a24;
-    --text-on-dark:#faf6f2;
-    --muted:#a89098;
-    --border:rgba(201,168,108,.22);
-    --text-dark:#2a1f24;
-    --text-mid:#6b5560;
-    --text-light:#9a8490;
-    --charcoal-light:#c9a86c;
-    --text-on-dark-muted:#c4b0b8;
-    --wine:#9c5a6a;
-    --wine-light:#c98898;
-    --wine-deep:#5c2d3a;
-    --blush:#f5e6e8;
+    /* ── SALON THEME: DARK BLUE, BLACK, WHITE WITH GOLD ACCENTS ── */
+    --rich-black:#070D16;
+    --charcoal:#0B1F3A;
+    --charcoal-mid:#111A29;
+    --warm-white:#FFFFFF;
+    --cream:#FFFFFF;
+    --cream-mid:#F2F5F9;
+    --cream-deep:#EAF0F6;
+    --cream-card:#FFFFFF;
+    --champagne:#F5F8FC;
+    --gold:#C6A15B;
+    --gold-light:#E2C98A;
+    --rose:#C6A15B;
+    --rose-deep:#B58F49;
+    --plum:#0B1F3A;
+    --plum-deep:#070D16;
+    --text-on-dark:#FFFFFF;
+    --muted:#8A98A8;
+    --border:rgba(11,31,58,.16);
+    --border-dark:rgba(255,255,255,.14);
+    --text-dark:#111111;
+    --text-mid:#2A3140;
+    --text-light:#5C6573;
+    --charcoal-light:#C6A15B;
+    --text-on-dark-muted:#CBD5E1;
+    --wine:#16325C;
+    --wine-light:#2C4A73;
+    --wine-deep:#0B1F3A;
+    --blush:#EAF0F7;
+    --lav-deep:#0B1F3A;
+    --lav-deeper:#070D16;
+    --lav:#16325C;
+    --lav-mid:#2C4A73;
+    --lav-light:#E4E9F1;
+    --lav-pale:#F5F7FA;
   }
   
   /* ── RESET ── */

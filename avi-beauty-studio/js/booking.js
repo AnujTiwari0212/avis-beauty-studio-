@@ -129,11 +129,6 @@ window.validateStep1 = function () {
       return;
     }
   
-    if (!B.staff) {
-      showToast('Please select a stylist');
-      return;
-    }
-  
     goPage(2);
   };
   

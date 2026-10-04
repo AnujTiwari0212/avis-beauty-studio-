@@ -1,0 +1,8 @@
+{
+  "name": "Avi's Beauty Studio",
+  "description": "Avi's Beauty Studio — premium unisex salon in Belle River, Ontario. Hair, facials, waxing, threading, bleach, makeup, and bridal services in Belle River.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

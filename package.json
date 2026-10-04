@@ -1,8 +1,13 @@
 {
   "name": "avi's-beauty-studio",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {},
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -e \"console.log('Build successful')\"",
+    "test": "playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shivanshi-Dubey/avis-beauty-studio.git"
@@ -18,5 +23,8 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.1.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
